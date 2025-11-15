@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Music & Memory Experiment</title>
+
+<style>
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #d6d6d6;
+    color: black;
+    margin: 0;
+    text-align: center;
+  }
+
+  a {
+    color: black; 
+    text-decoration: underline;
+  }
+
+  .page {
+    display: none;
+    padding: 40px;
+  }
+
+  h1, h2, p {
+    color: black; 
+  }
+
+  .visible {
+    display: block;
+  }
+
+  .step-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 30px;
+    text-decoration: underline;
+  }
+
+  .step-header {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 15px;
+  }
+
+  .buttons {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 18px;
+    border: 1px solid black;
+    background: white;
+    cursor: pointer;
+    color: black;
+  }
+
+</style>
+</head>
+<body>
+
+
+<div id="page1" class="page visible">
+  <h1>Welcome to the Music and Memory Experiment</h1>
+  <p>This is a project for the Orange County Science and Engineering Fair, known as OCSEF. 
+     Please answer precisely, honestly, and put in effort. Your result will be used as data 
+     and information.</p>
+  <button onclick="nextPage()">Next</button>
+</div>
+
+
+<div id="page2" class="page">
+  <h1>Please complete this in order (top to bottom)</h1>
+  <h2 class="step-header">Starting with Step 1:</h2>
+  
+  
+  <div class="step-title">Step 1</div>
+  <p>Enter your age: <a href="#link1">https://forms.gle/hKMcb7dpsSewzVbY7</a></p>
+
+  <div class="step-title">Step 2</div>
+  <p>Paragraph 1: <a href="#link2">https://docs.google.com/document/d/1oHctiEg3L5oA78G6A22ZV10Q6Ec6feFY_NvOHXBQ0zY/edit?usp=sharing</a></p>
+  <p>Quiz (Do AFTER you're finished): https://forms.gle/H18mhxZzMjb4kfEi6</p>
+
+  <div class="step-title">Step 3</div>
+  <p>Paragraph 2: <a href="#link3">https://docs.google.com/document/d/1R81Mi5p-1FFeyFQ7osQn3scY6ZXIXuWyaEdPF1zQ2SQ/edit?usp=sharing</a></p>
+  <p>Quiz (Do AFTER you're finished): https://forms.gle/GBQd8ScwskYP79Gs6</p> <!-- fixed -->
+
+  <div class="step-title">Step 4</div>
+  <p>Paragraph 3: <a href="#link4">https://docs.google.com/document/d/1Q_M-ALuNiiyYiHSf9B_AFc-XeKCat0M-zZdPPWohObk/edit?usp=sharing</a></p>
+  <p>Quiz (Do AFTER you're finished): https://forms.gle/RfdJH2xdZeQQA8xK8</p>
+
+
+  <div class="buttons">
+    <button onclick="backPage()">Back</button>
+    <button onclick="doneAlert()">Done</button>
+  </div>
+</div>
+
+<script>
+function nextPage() {
+  document.getElementById("page1").classList.remove("visible");
+  document.getElementById("page2").classList.add("visible");
+  window.scrollTo(0, 0);
+}
+
+function backPage() {
+  document.getElementById("page2").classList.remove("visible");
+  document.getElementById("page1").classList.add("visible");
+  window.scrollTo(0, 0);
+}
+
+function doneAlert() {
+  alert("Thank you! Your responses have been recorded.");
+}
+</script>
+
+</body>
+</html>
